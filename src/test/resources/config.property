@@ -1,0 +1,11 @@
+#Edge ,firefox,chrome
+
+browser=crome
+appUrl=http://localhost:100
+userid=admin
+password=admin
+
+
+dBName=
+dBhost=
+dBPassword=
