@@ -15,7 +15,7 @@ import java.time.Duration;
 
 public class LoginPage extends PageActions {
 
- public WebDriver driver;
+ //public WebDriver driver;
 
  public LoginPage(WebDriver driver, ExtentTest logger){
      super(driver,logger);

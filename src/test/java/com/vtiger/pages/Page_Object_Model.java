@@ -7,17 +7,17 @@ import org.openqa.selenium.WebDriver;
 
 public class Page_Object_Model {
 
-public static WebDriver driver;
+  public static WebDriver driver;
     public static ExtentHtmlReporter htmlReporter;
     public static ExtentReports extent;
     public static ExtentTest logger;
-    public static HeaderPage HDPage;
-    public static LoginPage LogINPage;
-    public static LeadPage LdPage;
-    public static AccountPage AccPage;
-    public static ContactPage ContPage;
-    public static Potential_Page Potenl_P;
-    public static HomePage HMPage;
+    public HeaderPage HDPage;
+    public LoginPage LogINPage;
+    public LeadPage LdPage;
+    public AccountPage AccPage;
+    public ContactPage ContPage;
+    public Potential_Page Potenl_P;
+    public HomePage HMPage;
 
 
     public LoginPage getLoginPage(){
