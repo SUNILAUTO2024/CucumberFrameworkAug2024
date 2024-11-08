@@ -75,7 +75,7 @@ public void LaunchApp() throws IOException, FilloException {
             driver = new ChromeDriver();
         }
     }
-    if (!System.getProperty("url").isBlank()){
+    if (!System.getProperty("url").isEmpty()){
         driver.get(System.getProperty("url"));
     }
     else {
