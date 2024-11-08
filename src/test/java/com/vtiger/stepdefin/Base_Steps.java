@@ -75,7 +75,12 @@ public void LaunchApp() throws IOException, FilloException {
             driver = new ChromeDriver();
         }
     }
-    driver.get(prop.getProperty("appUrl"));
+    if (!System.getProperty("url").isBlank()){
+        driver.get(System.getProperty("url"));
+    }
+    else {
+        driver.get(prop.getProperty("appUrl"));
+    }
     LogINPage=new LoginPage(driver,logger);
     LdPage = new LeadPage(driver,logger);
 }
