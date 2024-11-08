@@ -51,8 +51,8 @@ public void LaunchApp() throws IOException, FilloException {
    System.out.println(td);
 
    // System.exit(0);
-    System.out.println("Jenkings url"+System.getProperty("url"));
-    System.out.println("Jenkings browser"+System.getProperty("browser"));
+    System.out.println("Jenkings url = "+System.getProperty("url"));
+    System.out.println("Jenkings browser = "+System.getProperty("browser"));
 
 
     if (prop.getProperty("browser").equalsIgnoreCase("edge")){
