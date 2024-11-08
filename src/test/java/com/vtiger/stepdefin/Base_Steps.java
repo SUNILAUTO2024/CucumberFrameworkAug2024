@@ -57,8 +57,7 @@ public void LaunchApp() throws IOException, FilloException {
 
     if(!(System.getProperty("browser")==null)){
         if (System.getProperty("browser").equalsIgnoreCase("edge")){
-            driver=new FirefoxDriver();
-            //driver=new EdgeDriver();
+            driver = new EdgeDriver();
         }
         else if (System.getProperty("browser").equalsIgnoreCase("firefox")){
             driver=new FirefoxDriver();
