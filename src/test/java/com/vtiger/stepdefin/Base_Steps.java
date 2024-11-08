@@ -51,18 +51,29 @@ public void LaunchApp() throws IOException, FilloException {
    System.out.println(td);
 
    // System.exit(0);
+
     System.out.println("Jenkings url = "+System.getProperty("url"));
     System.out.println("Jenkings browser = "+System.getProperty("browser"));
 
-
-    if (prop.getProperty("browser").equalsIgnoreCase("edge")){
-        driver=new EdgeDriver();
+    if(!System.getProperty("browser").isBlank()){
+        if (System.getProperty("browser").equalsIgnoreCase("edge")){
+            driver=new EdgeDriver();
+        }
+        else if (System.getProperty("browser").equalsIgnoreCase("firefox")){
+            driver=new FirefoxDriver();
+        }
+        else{
+            driver=new ChromeDriver();
+        }
     }
-    else if (prop.getProperty("browser").equalsIgnoreCase("firefox")){
-        driver=new FirefoxDriver();
-    }
-    else{
-        driver=new ChromeDriver();
+    else {
+        if (prop.getProperty("browser").equalsIgnoreCase("edge")) {
+            driver = new EdgeDriver();
+        } else if (prop.getProperty("browser").equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+        } else {
+            driver = new ChromeDriver();
+        }
     }
     driver.get(prop.getProperty("appUrl"));
     LogINPage=new LoginPage(driver,logger);
