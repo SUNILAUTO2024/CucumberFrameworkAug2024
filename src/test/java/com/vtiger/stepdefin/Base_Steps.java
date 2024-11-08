@@ -55,7 +55,7 @@ public void LaunchApp() throws IOException, FilloException {
     System.out.println("Jenkings url = "+System.getProperty("url"));
     System.out.println("Jenkings browser = "+System.getProperty("browser"));
 
-    if(!System.getProperty("browser").isBlank()){
+    if(!(System.getProperty("browser")==null)){
         if (System.getProperty("browser").equalsIgnoreCase("edge")){
             driver=new FirefoxDriver();
             //driver=new EdgeDriver();
@@ -76,7 +76,7 @@ public void LaunchApp() throws IOException, FilloException {
             driver = new ChromeDriver();
         }
     }
-    if (!System.getProperty("url").isBlank()){
+    if (!(System.getProperty("url")==null)){
         driver.get(System.getProperty("url"));
     }
     else {
