@@ -57,7 +57,8 @@ public void LaunchApp() throws IOException, FilloException {
 
     if(!System.getProperty("browser").isBlank()){
         if (System.getProperty("browser").equalsIgnoreCase("edge")){
-            driver=new EdgeDriver();
+            driver=new FirefoxDriver();
+            //driver=new EdgeDriver();
         }
         else if (System.getProperty("browser").equalsIgnoreCase("firefox")){
             driver=new FirefoxDriver();
@@ -75,7 +76,7 @@ public void LaunchApp() throws IOException, FilloException {
             driver = new ChromeDriver();
         }
     }
-    if (!System.getProperty("url").isEmpty()){
+    if (!System.getProperty("url").isBlank()){
         driver.get(System.getProperty("url"));
     }
     else {
