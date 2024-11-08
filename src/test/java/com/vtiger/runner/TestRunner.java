@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",
 
         },
-        tags = "@Potential",
+        tags = "@Regression",
         monochrome = true
 )
 public class TestRunner {
