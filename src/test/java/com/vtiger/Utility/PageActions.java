@@ -20,8 +20,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
-import java.util.Set;
+import java.util.*;
 
 public class PageActions {
 
@@ -119,6 +118,64 @@ public void SetInput(WebElement elm, String value,String msg){
             logger.fail("Unable to Select Data from DD due to Error =  "+e.getMessage()+" <a href='"+getScreenshot()+"'><span class='label start-time'>Screenshot</span></a>  ");
         }
     }
+
+    public void selectTextByIndex(WebElement elm,int value, String msg){
+
+        try{
+            wait.until(ExpectedConditions.visibilityOf(elm));
+            Select sl = new Select(elm);
+            sl.selectByIndex(value);
+            elm.isDisplayed();
+            logger.pass(msg);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+
+            logger.fail("Unable to Select Data from DD due to Error =  "+e.getMessage()+" <a href='"+getScreenshot()+"'><span class='label start-time'>Screenshot</span></a>  ");
+        }
+    }
+
+    public String getDDValues(WebElement elm, String msg){
+
+    List<String> str = new LinkedList<>();
+
+        try{
+            wait.until(ExpectedConditions.visibilityOf(elm));
+            Select sl = new Select(elm);
+            Iterator<WebElement> it = sl.getOptions().iterator();
+            while(it.hasNext()){
+                str.add(it.next().getText());
+            }
+            System.out.println(str);
+            elm.isDisplayed();
+            logger.pass(msg);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+
+            logger.fail("Unable to Select Data from DD due to Error =  "+e.getMessage()+" <a href='"+getScreenshot()+"'><span class='label start-time'>Screenshot</span></a>  ");
+        }
+        return str.toString();
+    }
+
+
+    public void selectByValue(WebElement elm,String value, String msg){
+
+        try{
+            wait.until(ExpectedConditions.visibilityOf(elm));
+            Select sl = new Select(elm);
+            sl.selectByVisibleText(value);
+            elm.isDisplayed();
+            logger.pass(msg);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+
+            logger.fail("Unable to Select Data from DD due to Error =  "+e.getMessage()+" <a href='"+getScreenshot()+"'><span class='label start-time'>Screenshot</span></a>  ");
+        }
+    }
+
+
 
 public void Switch_ChildWindow(WebElement btn, WebElement txt_bx, String name){
     try{

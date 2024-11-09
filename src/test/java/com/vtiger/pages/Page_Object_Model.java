@@ -18,6 +18,7 @@ public class Page_Object_Model {
     public ContactPage ContPage;
     public Potential_Page Potenl_P;
     public HomePage HMPage;
+    public TicketPage TktPage;
 
 
     public LoginPage getLoginPage(){
@@ -54,6 +55,9 @@ public class Page_Object_Model {
 
     public Potential_Page getPotenl_P(){
         return Potenl_P=(Potenl_P==null) ? new Potential_Page(driver,logger) : Potenl_P;
+    }
+    public TicketPage getTkt_Page(){
+        return TktPage=(TktPage==null) ? new TicketPage(driver,logger) : TktPage;
     }
 
 

@@ -33,6 +33,8 @@ public class HeaderPage extends PageActions {
     @FindBy(linkText = "New Potential")
     WebElement New_Potential;
 
+    @FindBy(linkText = "New Ticket")
+    WebElement New_Ticket;
 
 
 //    @FindBy(xpath = "//[contains(text(),'You must specify a valid username and password.')]")
@@ -83,7 +85,9 @@ public class HeaderPage extends PageActions {
 public void Cick_N_Potential(){
         ClickElement(New_Potential,"Successfully clicked on New Pontential link");
 }
+        public void click_NewTicket(){
+        ClickElement(New_Ticket,"Successfully clicked on New Ticket link");
 
 
 
-}
+}}
