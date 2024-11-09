@@ -13,23 +13,39 @@ public class Ticket_Steps extends Base_Steps {
     }
     @Then("user verify the Priority DD and its values in New Ticket page")
     public void user_verify_the_priority_dd_and_its_values_in_new_ticket_page() {
-        String Priority_DDValues = getTkt_Page().check_priority_DD_Options();
+        String Priority_DDValues = getTkt_Page().priority_DD_Options();
         Assert.assertEquals("[Low, Normal, High, Urgent]",Priority_DDValues);
 
     }
 
     @Then("user verify severity DD and its values in New Ticket page")
     public void user_verify_severity_dd_and_its_values_in_new_ticket_page() {
-        String Severity_DDValues = getTkt_Page().check_Severity_DD_Options();
+        String Severity_DDValues = getTkt_Page().Severity_DD_Options();
         Assert.assertEquals("[Minor, Major, Feature, Critical]",Severity_DDValues);
     }
     @Then("user verify category DD and its values in New Ticket page")
     public void user_verify_category_dd_and_its_values_in_new_ticket_page() {
-        String Category_DDValues = getTkt_Page().check_Category_DD_Options();
+        String Category_DDValues = getTkt_Page().Category_DD_Options();
         Assert.assertEquals("[Big Problem, Small Problem, Other Problem]",Category_DDValues);
     }
 
+    @Then("verify default selection of priority DD in New Ticket page")
+    public void verify_default_selection_of_priority_dd_in_new_ticket_page() {
+        String prio = getTkt_Page().selected_Priority();
+        Assert.assertEquals("Low",prio);
+    }
 
+    @Then("verify default selection of severity DD in New Ticket page")
+    public void verify_default_selection_of_severity_dd_in_new_ticket_page() {
+        String sev = getTkt_Page().selected_Severity();
+        Assert.assertEquals("Minor",sev);
+    }
+
+    @Then("verify default selection of category DD in New Ticket page")
+    public void verify_default_selection_of_category_dd_in_new_ticket_page() {
+        String cat = getTkt_Page().selected_Category();
+        Assert.assertEquals("Big Problem",cat);
+    }
 
 
 }

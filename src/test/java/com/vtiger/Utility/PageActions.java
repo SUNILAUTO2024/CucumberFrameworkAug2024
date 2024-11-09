@@ -144,7 +144,7 @@ public void SetInput(WebElement elm, String value,String msg){
             Select sl = new Select(elm);
             Iterator<WebElement> it = sl.getOptions().iterator();
             while(it.hasNext()){
-                str.add(it.next().getText());
+                str.add(it.next().getText().toString());
             }
             System.out.println(str);
             elm.isDisplayed();
@@ -174,6 +174,24 @@ public void SetInput(WebElement elm, String value,String msg){
             logger.fail("Unable to Select Data from DD due to Error =  "+e.getMessage()+" <a href='"+getScreenshot()+"'><span class='label start-time'>Screenshot</span></a>  ");
         }
     }
+
+    public String get_selected_DD_Option(WebElement elm, String msg){
+      String str =null;
+        try{
+            wait.until(ExpectedConditions.visibilityOf(elm));
+            Select sl = new Select(elm);
+            str =sl.getFirstSelectedOption().getText();
+            elm.isDisplayed();
+            logger.pass(msg);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+
+            logger.fail("Unable to get selected value from DD due to Error =  "+e.getMessage()+" <a href='"+getScreenshot()+"'><span class='label start-time'>Screenshot</span></a>  ");
+        }
+        return str;
+    }
+
 
 
 

@@ -35,19 +35,31 @@ public class TicketPage extends HeaderPage {
      //   btn_save.click();
     }
 
-    public String check_priority_DD_Options() {
-        String prio = getDDValues(DD_Priority,"Checked Priority DD options");
+    public String priority_DD_Options() {
+        String prio = getDDValues(DD_Priority,"Verified all options in Priority DD");
         return prio;
     }
-    public String check_Severity_DD_Options() {
-        String sever = getDDValues(DD_Severity,"Checked Severity DD options");
+    public String Severity_DD_Options() {
+        String sever = getDDValues(DD_Severity,"Verified all options in Severity DD");
         return sever;
     }
-    public String check_Category_DD_Options() {
-        String Categ = getDDValues(DD_Category,"Checked Severity DD options");
+    public String Category_DD_Options() {
+        String Categ = getDDValues(DD_Category,"Verified all options in Severity DD");
         return Categ;
     }
 
+    public String selected_Priority() {
+        String prio = get_selected_DD_Option(DD_Priority,"Verify default Priority DD options");
+        return prio;
+    }
+    public String selected_Severity() {
+        String sever = get_selected_DD_Option(DD_Severity,"Verify default Severity DD options");
+        return sever;
+    }
+    public String selected_Category() {
+        String Categ = get_selected_DD_Option(DD_Category,"Verify default Severity DD options");
+        return Categ;
+    }
 
 
 

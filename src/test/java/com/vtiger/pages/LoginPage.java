@@ -97,7 +97,7 @@ public class LoginPage extends PageActions {
 
     public void selectTheme(String themeValue){
 
-                selectVisibleText(Lg_Theme,themeValue,themeValue+" has been Selected from DD");
+                selectVisibleText(Lg_Theme,themeValue,themeValue+" as a theme has been Selected from DD");
             }
 
 
