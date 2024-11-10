@@ -1,3 +1,4 @@
+@Regression
 Feature: lead functionality
 
   Background:
@@ -15,7 +16,7 @@ Feature: lead functionality
 
 
     @Leads @Multiple_User
-    Scenario: TC_04_Create_Lead_Data from Page Factory
+    Scenario: TC_10_Create_Lead_Data from Page Factory
       When user enter the valid credentials and click on login button
       Then user should be naviagte to home page
       And user can see the logout link on right corner

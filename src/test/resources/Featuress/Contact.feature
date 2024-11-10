@@ -1,3 +1,4 @@
+@Regression
 Feature: Contact functionality
 
   Background:

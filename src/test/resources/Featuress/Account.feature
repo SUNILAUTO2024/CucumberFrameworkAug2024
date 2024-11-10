@@ -1,3 +1,4 @@
+@Regression
 Feature: Account functionality
 
   Background:

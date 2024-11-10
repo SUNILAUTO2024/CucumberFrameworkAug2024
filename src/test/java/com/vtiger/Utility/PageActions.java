@@ -5,10 +5,7 @@ import com.aventstack.extentreports.utils.FileUtil;
 import com.codoid.products.utils.FilenameUtils;
 //import jdk.javadoc.internal.doclets.toolkit.util.DocFile;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -192,30 +189,54 @@ public void SetInput(WebElement elm, String value,String msg){
         return str;
     }
 
+    public String Alert_GetText(String msg) {
 
+        try {
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert al = driver.switchTo().alert();
+             String text = al.getText();
+            System.out.println(text);
+            logger.pass(msg);
+            return text;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            logger.fail("Unable to get Alert Text due to Error =  " + e.getMessage() + " <a href='" + getScreenshot() + "'><span class='label start-time'>Screenshot</span></a>  ");
+        return null;
+        }
 
+    }
 
-public void Switch_ChildWindow(WebElement btn, WebElement txt_bx, String name){
-    try{
-        wait.until(ExpectedConditions.visibilityOf(btn));
-        String Parent_H = driver.getWindowHandle();
-        btn.click();
-        Set<String> Handles = driver.getWindowHandles();
-        for (String handle:Handles) {
-            if (!handle.equals(Parent_H)){
-          driver.switchTo().window(handle);
-          wait.until(ExpectedConditions.visibilityOf(txt_bx));
-
-            }
+    public void Alert_Accept(String msg){
+        try {
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert al = driver.switchTo().alert();
+            al.accept();
+            logger.pass(msg);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            logger.fail("Unable to Accept Alert due to Error =  " + e.getMessage() + " <a href='" + getScreenshot() + "'><span class='label start-time'>Screenshot</span></a>  ");
         }
     }
-    catch(Exception e){
-
-    }
 
 
-
-}
+//public void Switch_ChildWindow(WebElement btn, WebElement txt_bx, String name){
+//    try{
+//        wait.until(ExpectedConditions.visibilityOf(btn));
+//        String Parent_H = driver.getWindowHandle();
+//        btn.click();
+//        Set<String> Handles = driver.getWindowHandles();
+//        for (String handle:Handles) {
+//            if (!handle.equals(Parent_H)){
+//          driver.switchTo().window(handle);
+//          wait.until(ExpectedConditions.visibilityOf(txt_bx));
+//
+//            }
+//        }
+//    }
+//    catch(Exception e){
+//
+//    }
+//}
 
 
 

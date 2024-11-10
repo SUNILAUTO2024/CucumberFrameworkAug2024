@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",
 
         },
-        tags = "@Ticket",
+        tags = "@Regression",
         monochrome = true
 
 )
