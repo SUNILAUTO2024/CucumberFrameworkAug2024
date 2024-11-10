@@ -219,24 +219,40 @@ public void SetInput(WebElement elm, String value,String msg){
     }
 
 
-//public void Switch_ChildWindow(WebElement btn, WebElement txt_bx, String name){
-//    try{
-//        wait.until(ExpectedConditions.visibilityOf(btn));
-//        String Parent_H = driver.getWindowHandle();
-//        btn.click();
-//        Set<String> Handles = driver.getWindowHandles();
-//        for (String handle:Handles) {
-//            if (!handle.equals(Parent_H)){
-//          driver.switchTo().window(handle);
-//          wait.until(ExpectedConditions.visibilityOf(txt_bx));
-//
-//            }
-//        }
-//    }
-//    catch(Exception e){
-//
-//    }
-//}
+public void Switch_ChildWindow(WebElement elm,String msg){
+    try{
+
+        Set<String> Handles = driver.getWindowHandles();
+        Iterator<String> iter = Handles.iterator();
+        String  ParentH = iter.next();
+        System.out.println("Parent Window = "+ParentH);
+        String ChildH = iter.next();
+        System.out.println("Child WIndow = "+ChildH);
+        driver.switchTo().window(ChildH);
+        elm.click();
+        driver.switchTo().window(ParentH); //Switch back to parent window of driver.
+    }
+    catch(Exception e){
+        System.out.println(e.getMessage());
+        logger.fail("Unable to verify Child Window due to Error =  " + e.getMessage() + " <a href='" + getScreenshot() + "'><span class='label start-time'>Screenshot</span></a>  ");
+    }
+}
+
+    public void Switch_ParentWindow(String msg){
+        try{
+
+            Set<String> Handles = driver.getWindowHandles();
+            Iterator<String> iter = Handles.iterator();
+            String  ParentH = iter.next();
+            System.out.println("Parent Window = "+ParentH);
+            String ChildH = iter.next();
+            System.out.println("Child WIndow = "+ChildH);
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            logger.fail("Unable to verify Parent Window due to Error =  " + e.getMessage() + " <a href='" + getScreenshot() + "'><span class='label start-time'>Screenshot</span></a>  ");
+        }
+    }
 
 
 

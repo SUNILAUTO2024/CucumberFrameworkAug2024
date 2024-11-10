@@ -1,6 +1,6 @@
 #Edge ,firefox,chrome
 
-browser=edge
+browser=chrome
 appUrl=http://localhost:100
 userid=admin
 password=admin

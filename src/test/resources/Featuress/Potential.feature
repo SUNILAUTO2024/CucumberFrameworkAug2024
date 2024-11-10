@@ -14,3 +14,4 @@ Feature: Potential functionality
     Then user click on New Potential link
 
     When user enters the mandatory fields on New Potential page Potential name in String, Select Account and click on save button
+
