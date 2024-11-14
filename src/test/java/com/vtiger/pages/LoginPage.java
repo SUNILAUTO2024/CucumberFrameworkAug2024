@@ -40,6 +40,15 @@ public class LoginPage extends PageActions {
     @FindBy(xpath = "//img[@src='include/images/vtiger-crm.gif']")
     WebElement logo;
 
+    @FindBy(linkText = "vtiger Customer Portal")
+    WebElement Customer_Prtr;
+
+    @FindBy(id = "loginspan")
+    WebElement Login_Span;
+
+    @FindBy(name = "username")
+    WebElement username1;
+
 
 //    String username = "user_name";
 //    String password = "user_password";
@@ -119,7 +128,21 @@ public class LoginPage extends PageActions {
         ElementExists(Login,"Login button exists and validated");
     }
 
+        public void Clcik_CustomerPrtr() {
+            ClickElement(Customer_Prtr, "Customer Portal link is clicked");
+        }
+        public void verifyLogin_Span() {
+            ElementExists(Login_Span,"Login span is displayed on Login Page");
+            ClickElement(Login_Span,"Login span is clicked");
+        }
 
+        public void setUsername1(String uid) {
+
+                SetInput(username1,uid,uid+" has been entered into username field");}
+    
+    public void verifyUsername1() {
+        ElementExists(username1,"username1 is displayed on Login Page");
+    }
 
 
 }
