@@ -118,6 +118,7 @@ public class loginSteps extends Base_Steps {
 
 
 
+
     @Then("user should be naviagte to home page")
     public void user_should_be_naviagte_to_home_page() {
         // Write code here that turns the phrase above into concrete actions
@@ -169,6 +170,14 @@ public class loginSteps extends Base_Steps {
 
     }
 
+    @Then("user click on vTiger customer portal link")
+    public void user_click_on_v_tiger_customer_portal_link() {
+
+    }
+    @Then("user click on Login button and fill username_Password and closed the browser")
+    public void user_click_on_login_button_and_fill_username_password_and_closed_the_browser() {
+
+    }
 
 
 }

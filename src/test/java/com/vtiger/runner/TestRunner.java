@@ -9,13 +9,13 @@ import org.junit.runner.RunWith;
 
  features = "src/test/resources/Featuress",
         glue="com.vtiger.stepdefin",
-        dryRun = false,
+        dryRun = true,
         plugin = {
                 "pretty", "html:target/cucumber-html-report.html",
                 "json:target/cucumber.json",
 
         },
-        tags = "@Potential",
+        tags = "@LoginPage_Links",
         monochrome = true
 
 )
