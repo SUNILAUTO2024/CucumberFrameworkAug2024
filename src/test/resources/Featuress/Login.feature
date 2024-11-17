@@ -31,3 +31,13 @@ Background:
       | add1  | pass1   |
       | add34 | pass334 |
 
+   @LoginPage_Links
+  Scenario: TC_11_Validate Login Page Links
+
+    Then user click on vTiger customer portal link
+    And user click on Login button and fill username_Password and closed the browser
+     When user enter the valid credentials and click on login button
+    Then user should be naviagte to home page
+    And user can see the logout link on right corner
+
+
