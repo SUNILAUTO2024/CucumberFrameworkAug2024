@@ -9,13 +9,17 @@ import org.junit.runner.RunWith;
 
  features = "src/test/resources/Featuress",
         glue="com.vtiger.stepdefin",
-        dryRun = true,
+        dryRun = false,
         plugin = {
                 "pretty", "html:target/cucumber-html-report.html",
+                "junit:target/cucumber.xml",
+                "rerun:target/rerun.txt",
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/cucumber.json",
 
         },
-        tags = "@LoginPage_Links",
+        tags = "@API",
         monochrome = true
 
 )

@@ -24,7 +24,7 @@ public class WebTable {
         System.out.println("Total Record = " + total_Record);
         int flag = 0;
         int pagecount = 1;
-        int rcount = 0;
+//        int rcount = 0;
         if (total_Record > 20) {
             pagecount = (total_Record / 20) + 1;
         }
@@ -34,7 +34,7 @@ public class WebTable {
                 int row = j + 5;
                 if (driver.findElements(By.xpath("//table[@class='FormBorder']/tbody/tr[" + row + "]/td[4]")).size() > 0) {
                     String cellvalue = driver.findElement(By.xpath("//table[@class='FormBorder']/tbody/tr[" + row + "]/td[4]")).getText();
-                    System.out.println(cellvalue);
+                   // System.out.println(cellvalue);
                     if (cellvalue.equalsIgnoreCase("SHinde")) {
                         driver.findElements(By.name("selected_id")).get(j).click();
                         driver.findElement(By.xpath("//input[@value='Delete']")).click();
@@ -50,7 +50,7 @@ public class WebTable {
                 if (flag == 1) {
                     break;
                 }
-                rcount = 0;
+//                rcount = 0;
             }
         }
     }
